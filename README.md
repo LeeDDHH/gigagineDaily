@@ -1,5 +1,4 @@
-# qiita_daily
-gigazine記事のクローリング＆スクレイピング
+# gigazine記事のクローリング＆スクレイピング
 
 ## 紹介
 Supporterz Colab　発表用資料
