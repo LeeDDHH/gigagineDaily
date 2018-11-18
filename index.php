@@ -16,7 +16,7 @@ foreach ( $article as $section )
     $title = empty ( $section['div']['h2']['a']['span'] ) ? '' : $section['div']['h2']['a']['span'];
 
     if ( empty( $articleURL ) || $category == '広告' ) continue;//広告とURLなしの項目が混じっていたため、省く
-    $articleArray[] = array ( $articleURL, $category, $title );
+    $articleArray[] = array ( $articleURL, $category, $title );//記事を配列に格納
 }
 
 //スクレイピング結果をまとめるファイルを指定
@@ -47,6 +47,7 @@ foreach ( $articleArray as $k => $v )
         $tmp = fgets ( $l );
         //取得した一行から改行を除く
         $tmp = str_replace ( PHP_EOL, '', $tmp );
+        //一行をコンマ区切りで配列にする
         $tmp = explode ( ',', $tmp );
         //URLがすでに取得したものだったら処理を終了させる
         if ( $tmp[0] == $v[0] ) break;
