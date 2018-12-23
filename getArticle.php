@@ -12,7 +12,7 @@ if ( empty ( $article[0] ) ) return;
 
 $url = $article[0];
 $tags = empty ( $article[1] ) ? NOCLASS : $article[1];
-$title = empty ( $article[2] ) ? NOTITLE : $article[2];
+$title = empty ( $article[2] ) ? NOTITLE : str_replace('/', '&&', $article[2]);
 
 $data = getOneArticle ( $url );
 

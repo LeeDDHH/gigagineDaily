@@ -13,7 +13,7 @@ foreach ( $article as $section )
 {
     $articleURL = empty ( $section['div']['div'][0]['a']['@attributes']['href'] ) ? '' : $section['div']['div'][0]['a']['@attributes']['href'];
     $category = empty ( $section['div']['div'][1]['a']['span'] ) ? '' : $section['div']['div'][1]['a']['span'];
-    $title = empty ( $section['div']['h2']['a']['span'] ) ? '' : $section['div']['h2']['a']['span'];
+    $title = empty ( $section['div']['h2']['a']['span'] ) ? '' : str_replace('', '-', $section['div']['h2']['a']['span']);
 
     if ( empty( $articleURL ) || $category == '広告' ) continue;//広告とURLなしの項目が混じっていたため、省く
     $articleArray[] = array ( $articleURL, $category, $title );//記事を配列に格納
